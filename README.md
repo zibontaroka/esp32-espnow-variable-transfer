@@ -1,12 +1,12 @@
 # ESP32 ESP-NOW Demo: Bidirectional Variable Transfer
 
 ## Overview
-This project demonstrates bidirectional communication between two ESP32 devices using the ESP-NOW protocol. Section A sends a packet containing four demo variables (`int`, `float`, `char`, `bool`) to Section B, which responds with modified values. The code uses a shared header file and separate Arduino sketches for each section, with Serial monitor support for input and output.
+This project demonstrates bidirectional communication between two ESP32 devices using the ESP-NOW protocol. Section A sends a packet containing four demo variables (`int`, `float`, `char`, `bool`) to Section B, which responds with modified values. The code utilizes a shared header file and separate Arduino sketches for each section, featuring Serial Monitor support for both input and output.
 
 ## Features
 - **Bidirectional Communication**: Section A sends data to Section B, and Section B responds to Section A.
 - **Data Types**: Transfers `int`, `float`, `char`, and `bool` variables.
-- **Serial Input/Output**: Section A accepts input via Serial monitor (format: `int,float,char,bool`), and both sections print received data.
+- **Serial Input/Output**: Section A accepts input via Serial monitor (format: `int, float, char, bool`), and both sections print received data.
 - **ESP-NOW**: Leverages the ESP-NOW protocol for wireless communication.
 
 ## Requirements
@@ -28,7 +28,7 @@ This project demonstrates bidirectional communication between two ESP32 devices 
    - Upload `SectionB.ino` to the other ESP32 (Section B).
 5. **Test the Setup**:
    - Open the Serial monitor (115200 baud) for both ESP32s.
-   - In Section A's Serial monitor, enter input in the format `int,float,char,bool` (e.g., `42,3.14,A,true`).
+   - In Section A's Serial monitor, enter input in the format `int, float, char, bool` (e.g., `42, 3.14, A, true`).
    - Observe the output in both Serial monitors to confirm data transfer.
 
 ## File Structure
@@ -39,14 +39,14 @@ This project demonstrates bidirectional communication between two ESP32 devices 
 
 ## Usage
 1. **Section A**:
-   - Accepts Serial input in the format `int,float,char,bool` (e.g., `42,3.14,A,true`).
+   - Accepts Serial input in the format `int, float, char, bool` (e.g., `42, 3.14, A, true`).
    - Sends a `DemoPacketAtoB` to Section B.
    - Prints received `DemoPacketBtoA` from Section B.
 2. **Section B**:
    - Receives `DemoPacketAtoB` from Section A and prints the values.
    - Sends a `DemoPacketBtoA` back to Section A with modified values (e.g., `int + 1`, `float * 2`, next `char`, toggled `bool`).
 3. **Example Output**:
-   - Section A input: `42,3.14,A,true`
+   - Section A input: `42,3.14, A, true`
    - Section B receives: `Demo Int: 42, Demo Float: 3.14, Demo Char: A, Demo Bool: true`
    - Section A receives: `Demo Int: 43, Demo Float: 6.28, Demo Char: B, Demo Bool: false`
 
